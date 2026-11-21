@@ -100,4 +100,4 @@ Trong cửa sổ demo: chuột để xoay/zoom (hai khung đồng bộ), phím `
 ## Tác giả
 
 Phạm Huỳnh Đức, Huỳnh Phúc Thiện – Lớp 22DT4, Trường Đại học Bách khoa – Đại học Đà Nẵng.
-GVHD: TS. Phan Trần Đăng Khoa.
+GVHD: PGS.TS. Phan Trần Đăng Khoa.
