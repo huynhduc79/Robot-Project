@@ -1,0 +1,89 @@
+Chy Simulink sl_drivepoint qua 10 waypoint...
+
+xg =
+
+   10.0000    2.5000
+
+
+xg =
+
+   17.5000    2.5000
+
+
+xg =
+
+   17.5000   10.0000
+
+
+xg =
+
+   17.5000   17.5000
+
+
+xg =
+
+   10.0000   17.5000
+
+
+xg =
+
+    10    10
+
+
+xg =
+
+    2.5000   10.0000
+
+
+xg =
+
+    2.5000   17.5000
+
+
+xg =
+
+    2.5000   10.0000
+
+
+xg =
+
+    2.5000    2.5000
+
+Simulink: 5972 mu, 119.1 s mô phng, 78.2 m, va chm = 0 | 190 keyframe
+
+Phýõng pháp        | ATE[m] | Cui[m] | %x   %y   %  | ANEES | Acc% | IoU%
+Dead reckoning     |  1.912 |  1.866 |   29  100   81 |  6.61 | 88.21 |   5.1
+Không ðóng vng    |  0.097 |  0.108 |  100  100  100 |  0.70 | 98.04 |  56.0
+Pose-Graph SLAM    |  0.019 |  0.009 |  100  100   99 |  0.80 | 99.09 |  76.1
+
+Monte Carlo M = 20 ...
+  ln  1: LC = 26, ATE = 1.272 / 0.089 / 0.043
+  ln  2: LC = 26, ATE = 1.207 / 0.076 / 0.021
+  ln  3: LC = 26, ATE = 0.752 / 0.267 / 0.034
+  ln  4: LC = 25, ATE = 1.294 / 0.070 / 0.022
+  ln  5: LC = 26, ATE = 0.600 / 0.025 / 0.017
+  ln  6: LC = 26, ATE = 0.675 / 0.122 / 0.066
+  ln  7: LC = 26, ATE = 0.344 / 0.051 / 0.037
+  ln  8: LC = 26, ATE = 0.177 / 0.082 / 0.023
+  ln  9: LC = 26, ATE = 0.615 / 0.057 / 0.016
+  ln 10: LC = 26, ATE = 0.546 / 0.090 / 0.021
+  ln 11: LC = 26, ATE = 1.011 / 0.065 / 0.028
+  ln 12: LC = 26, ATE = 2.092 / 0.110 / 0.029
+  ln 13: LC = 26, ATE = 0.780 / 0.091 / 0.044
+  ln 14: LC = 26, ATE = 1.578 / 0.104 / 0.019
+  ln 15: LC = 26, ATE = 1.049 / 0.167 / 0.025
+  ln 16: LC = 26, ATE = 0.885 / 0.073 / 0.053
+  ln 17: LC = 27, ATE = 0.666 / 0.178 / 0.021
+  ln 18: LC = 26, ATE = 0.329 / 0.071 / 0.022
+  ln 19: LC = 26, ATE = 0.634 / 0.081 / 0.016
+  ln 20: LC = 26, ATE = 0.947 / 0.065 / 0.018
+
+Ð nhy theo sigma_r ...
+  sigma_r = 0.01: LC = 26, ATE noLC = 0.042, SLAM = 0.013, IoU = 68.5, elip = 99.9
+  sigma_r = 0.03: LC = 26, ATE noLC = 0.103, SLAM = 0.029, IoU = 73.0, elip = 98.9
+  sigma_r = 0.05: LC = 27, ATE noLC = 0.179, SLAM = 0.047, IoU = 67.9, elip = 96.5
+  sigma_r = 0.08: LC = 20, ATE noLC = 0.814, SLAM = 0.170, IoU = 33.5, elip = 84.5
+lidarSLAM off: 190 scan, 0 ðóng vng, ATE = 0.245 m
+lidarSLAM on : 190 scan, 83 ðóng vng, ATE = 0.122 m
+
+Ð lýu hnh vào D:\KT robot\PoseGraphSLAM_Project\matlab\figures_matlab, kt qu vào D:\KT robot\PoseGraphSLAM_Project\matlab\results_matlab

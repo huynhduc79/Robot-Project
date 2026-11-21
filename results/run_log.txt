@@ -1,0 +1,88 @@
+[Kịch bản 1] So sánh DR / No-LC / Pose-Graph SLAM, seed = 7
+seed=7: N=206, LC=28/28, ATE DR=1.183 NoLC=0.080 SLAM=0.017
+  thời gian chạy SLAM: 6.5 s
+  -> fig1_moi_truong_lidar.png
+  -> fig2_dead_reckoning_95.png
+  -> fig3_quy_dao_elip95.png
+  -> fig4_sai_so_bien95_3pp.png
+  -> fig5_ate_va_do_bat_dinh.png
+  -> fig6_do_thi_tu_the.png
+  -> fig7_ban_do_luoi.png
+  -> fig7b_ban_do_nolc_va_canTren.png
+[Kịch bản 2] Monte Carlo kiểm định nhất quán, M = 20
+  run 1/20: LC=28, ATE dr/nolc/slam = 0.742/0.051/0.039
+  run 2/20: LC=28, ATE dr/nolc/slam = 0.647/0.125/0.015
+  run 3/20: LC=29, ATE dr/nolc/slam = 1.421/0.098/0.049
+  run 4/20: LC=28, ATE dr/nolc/slam = 0.669/0.104/0.028
+  run 5/20: LC=28, ATE dr/nolc/slam = 0.893/0.057/0.050
+  run 6/20: LC=29, ATE dr/nolc/slam = 0.314/0.090/0.015
+  run 7/20: LC=28, ATE dr/nolc/slam = 1.589/0.090/0.019
+  run 8/20: LC=28, ATE dr/nolc/slam = 1.859/0.079/0.053
+  run 9/20: LC=29, ATE dr/nolc/slam = 2.046/0.095/0.027
+  run 10/20: LC=28, ATE dr/nolc/slam = 0.218/0.096/0.024
+  run 11/20: LC=28, ATE dr/nolc/slam = 0.426/0.039/0.044
+  run 12/20: LC=28, ATE dr/nolc/slam = 1.243/0.028/0.018
+  run 13/20: LC=28, ATE dr/nolc/slam = 1.505/0.031/0.017
+  run 14/20: LC=28, ATE dr/nolc/slam = 0.394/0.075/0.021
+  run 15/20: LC=28, ATE dr/nolc/slam = 0.688/0.064/0.018
+  run 16/20: LC=28, ATE dr/nolc/slam = 0.884/0.085/0.021
+  run 17/20: LC=28, ATE dr/nolc/slam = 0.943/0.141/0.022
+  run 18/20: LC=29, ATE dr/nolc/slam = 0.869/0.121/0.016
+  run 19/20: LC=28, ATE dr/nolc/slam = 0.363/0.103/0.043
+  run 20/20: LC=30, ATE dr/nolc/slam = 1.242/0.110/0.022
+  -> fig8_monte_carlo_nhat_quan.png
+D:\KT robot\PoseGraphSLAM_Project\python\run_experiments.py:282: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  ax.boxplot([AT[k] for k in NE], labels=[NAMES[k] for k in NE])
+  -> fig8b_boxplot_ate.png
+[Kịch bản 3] Độ nhạy theo σ_r, M = 6 lần / mức
+  σ_r=0.01: LC=28, ATE noLC=0.040, SLAM=0.015, Acc=99.0, IoU=67.2
+  σ_r=0.03: LC=28, ATE noLC=0.066, SLAM=0.031, Acc=98.8, IoU=70.2
+  σ_r=0.05: LC=29, ATE noLC=0.129, SLAM=0.059, Acc=98.2, IoU=65.1
+  σ_r=0.08: LC=22, ATE noLC=0.503, SLAM=0.139, Acc=95.7, IoU=39.0
+  -> fig9_do_nhay_nhieu_lidar.png
+# KẾT QUẢ MÔ PHỎNG (tự sinh bởi run_experiments.py)
+
+## Bảng 4.1 – So sánh 3 phương pháp (σ_r = 3 cm, 1 lần chạy đại diện)
+
+| Chỉ số | Dead reckoning | Không đóng vòng | Pose-Graph SLAM |
+|---|---|---|---|
+| ATE RMSE [m] | 1.183 | 0.080 | 0.017 |
+| Sai số vị trí lớn nhất [m] | 2.079 | 0.144 | 0.036 |
+| Sai số điểm cuối [m] | 2.011 | 0.103 | 0.001 |
+| RMSE hướng [độ] | 6.89 | 0.25 | 0.15 |
+| RPE Δ=1 tịnh tiến [m] | 0.0184 | 0.0054 | 0.0053 |
+| RPE Δ=20 tịnh tiến [m] | 0.155 | 0.017 | 0.014 |
+| σ_pos cuối [m] | 1.687 | 0.246 | 0.005 |
+| σ_pos lớn nhất [m] | 1.687 | 0.246 | 0.073 |
+| % e_x trong ±2σ | 93.2 | 100.0 | 99.5 |
+| % e_y trong ±2σ | 100.0 | 100.0 | 100.0 |
+| % e_θ trong ±2σ | 100.0 | 100.0 | 100.0 |
+| % trong elip 95 % | 95.1 | 100.0 | 100.0 |
+| ANEES (kỳ vọng 2) | 2.00 | 0.72 | 0.39 |
+| Map Accuracy [%] | 90.69 | 98.00 | 99.05 |
+| Obstacle IoU [%] | 9.00 | 55.03 | 75.01 |
+
+Bản đồ dựng bằng tư thế thật (cận trên): Acc = 99.09 %, IoU = 75.62 %
+
+Thông tin đồ thị: {"N": 206, "n_edges": 437, "n_odo": 205, "n_seq": 204, "n_lc": 28, "n_lc_try": 28, "chi2_init": 1927636.1780846925, "chi2_final": 648.765205959438, "gn_iters": 4, "dof": 696, "dr_vs_odopg_maxdiff": 5.417888360170764e-14, "path_len": 75.0, "H_density": 1.5825137985567812}
+
+## Bảng 4.2 – Monte Carlo (M = 20)
+
+| Phương pháp | ATE TB ± ĐLC [m] | % x | % y | % θ | % elip | ANEES |
+|---|---|---|---|---|---|---|
+| Dead reckoning (odometry) | 0.948 ± 0.515 | 94.3 | 92.0 | 93.0 | 95.6 | 2.02 |
+| Không đóng vòng (No LC) | 0.084 ± 0.030 | 99.8 | 100.0 | 99.9 | 99.9 | 0.69 |
+| Pose-Graph SLAM | 0.028 ± 0.013 | 99.3 | 98.2 | 98.3 | 98.6 | 1.17 |
+
+Biên 95 % của NEES trung bình: [1.22, 2.97]
+
+## Bảng 4.3 – Độ nhạy theo σ_r
+
+| σ_r [m] | Số LC | ATE DR | ATE No LC | ATE SLAM | Acc No LC | IoU No LC | Acc SLAM | IoU SLAM | % elip 95 % |
+|---|---|---|---|---|---|---|---|---|---|
+| 0.01 | 28 | 1.021 | 0.040 ± 0.030 | 0.015 ± 0.005 | 98.71 | 61.86 | 98.97 | 67.16 | 99.8 |
+| 0.03 | 28 | 1.021 | 0.066 ± 0.025 | 0.031 ± 0.011 | 98.27 | 60.62 | 98.81 | 70.23 | 98.5 |
+| 0.05 | 29 | 1.021 | 0.129 ± 0.048 | 0.059 ± 0.041 | 97.07 | 49.80 | 98.22 | 65.10 | 85.7 |
+| 0.08 | 22 | 1.021 | 0.503 ± 0.165 | 0.139 ± 0.031 | 92.58 | 18.04 | 95.69 | 39.00 | 89.7 |
+
+Tổng thời gian: 5.9 phút
